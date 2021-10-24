@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.view.MainActivity"
+    android:paddingBottom="@dimen/friend_list_padding"
+    android:paddingStart="@dimen/friend_list_padding"
+    android:paddingEnd="@dimen/friend_list_padding"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/friend_list_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="@dimen/friend_list_item_padding"
+            android:layout_marginBottom="@dimen/friend_list_padding"
+            android:elevation="2dp"
+            app:cardCornerRadius="32dp">
+
+            <ImageView
+                android:id="@+id/account_image"
+                android:layout_width="64dp"
+                android:layout_height="64dp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/account_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/list_item_text_size" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/friend_count_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Friends count: "
+            android:layout_marginBottom="@dimen/friend_list_item_padding"
+            />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            android:padding="@dimen/friend_list_padding">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/friends_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
